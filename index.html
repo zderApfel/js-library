@@ -15,7 +15,7 @@
             <div class="book-card" id="create-new">
                 <h1 class="title">Create New Book</h1>
                 <div id="input-fields">
-                    <label for="book-title">Title
+                    <label for="book-title" class=>Title
                         <input type="text" name="book-title" id="book-title" class="new-input">
                     </label>
                     <label for="book-author">Author
@@ -24,9 +24,15 @@
                     <label for="book-pages">Page Count
                         <input type="text" name="book-pages" id="book-pages" class="new-input">
                     </label>
-                    <label for="have-you-read">Have you read it?
-                        <input type="radio" name="have-you-read" id="have-you-read" class="new-input">
+                    <label for="have-you-read" id="have-you-read">Have you read it?
+                        <label for="yes">Yes
+                            <input type="radio" name="have-you-read">
+                        </label>
+                        <label for="no">No
+                            <input type="radio" name="have-you-read">
+                        </label>
                     </label>
+                    <div id="submit">Submit</div>
                 </div>
             </div>
         </div>

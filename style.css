@@ -2,10 +2,6 @@ div{
     font-family: 'Dosis', sans-serif;
 }
 
-label{
-    font-size: 15px;
-}
-
 #library-container{
     position: absolute;
     display: inline-grid;
@@ -23,10 +19,21 @@ label{
 }
 
 #input-fields{
+    text-align: center;
     position: relative;
     margin: auto;
     display: inline-grid;
-    border-style: solid;
+}
+
+#submit{
+    user-select: none;
+    border-style: outset;
+    border-color: white;
+    background-color: white;
+    color: black;
+    text-align: center;
+    width: 50%;
+    margin: 10px 0 0 23%;
 }
 
 .book-card{
@@ -37,6 +44,10 @@ label{
     border-radius: 30px;
 }
 
+.text-title{
+    display:block;
+}
+
 .title{
     font-style: italic;
 }
@@ -45,6 +56,12 @@ label{
     padding-top: 10px;
     font-size: 25px;
     text-align: center;
+}
+
+.new-input{
+    width: 100%;
+    margin-top: 10px;
+    display: block;
 }
 
 .have-read{
@@ -58,10 +75,6 @@ label{
     margin: auto;
 }
 
-.have-read:active{
+.have-read:active, #submit:active{
     border-style: inset;
-}
-
-.new-input{
-    margin-top: 25px;
 }
