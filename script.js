@@ -9,6 +9,10 @@ A simple web page that creates a series of books and displays them on a webpage.
 A render() function that creates "cards" for each book that displays their information
     - This must also include a button that allows you to toggle it's "read" status
 A form to create a new book, and then adds it to the display page
+
+--NOTES--
+
+Each book card will have four elements to it
 */
 
 let myLibrary = [];
