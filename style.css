@@ -18,6 +18,12 @@ div{
     order: 1;
 }
 
+.book-card, #create-new{
+    margin: 20px 20px 20px 20px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px gray;
+}
+
 #input-fields{
     text-align: center;
     position: relative;
@@ -39,13 +45,6 @@ div{
 .book-card{
     height: 300px;
     background-color: lightgray;
-    box-shadow: 5px 5px 5px gray;
-    margin: 20px 20px 20px 20px;
-    border-radius: 30px;
-}
-
-.text-title{
-    display: block;
 }
 
 .title{
@@ -54,7 +53,7 @@ div{
 
 .title, .author, .pages{
     padding-top: 10px;
-    margin-bottom: 5%;
+    margin-top: 5%;
     font-size: 25px;
     text-align: center;
 }
@@ -77,7 +76,6 @@ div{
 }
 
 .have-read{
-
     user-select: none;
     border-style: outset;
     border-color: darkgreen;
@@ -86,6 +84,7 @@ div{
     text-align: center;
     width: 50%;
     margin: auto;
+    margin-top: 10%;
 }
 
 .have-not-read:active, .have-read:active, #submit:active{
