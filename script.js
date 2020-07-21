@@ -16,70 +16,67 @@ Each book card will have four elements to it
 */
 
 const LIBRARY = document.getElementById("library-container");
-let books = [];
+const TITLE_INPUT = document.getElementById("input-title");
+const AUTHOR_INPUT = document.getElementById("input-author");
+const PAGES_INPUT = document.getElementById("input-pages");
+const READ_INPUT = document.getElementById("have-you-read");
+const INPUT_SUBMIT = document.getElementById("submit");
+INPUT_SUBMIT.addEventListener("click", function() {bookForm()});
+let books = [
+    new Book("Easy JavaScript: How One Bumbling Idiot Did It", "Zachary Zahradka", "786", true)
+];
 
-addBook("Test","test","266",true);
-render();
-
-function Book(title, author, pages, haveRead){
+function Book(title, author, pages, haveRead){ //The Book object constructor
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.haveRead = haveRead; //Bool
 }
 
-/*Book.prototype.info = function(){
-    let readText = "";
-    if (this.haveRead){
-        readText = "have read";
-    }
-    else {
-        readText = "not read yet";
-    }
-    console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${readText}`)
-}*/
+for (x in books){
+    render(books[x]);
+}
 
 function addBook(title, author, pages, read){
     let x = new Book(title, author, pages, read);
-    books.push(x); 
+    books.push(x);
+    return x;
 }
 
-function render(){
-    for (x in books){
-        let newBook = document.createElement("div");
-        newBook.className = "book-card";
-        
-        let bookTitle = document.createElement("div");
-        bookTitle.className = "title";
-        bookTitle.innerHTML = books[x].title;
+function render(book){
+    let newBook = document.createElement("div");
+    newBook.className = "book-card";
+    
+    let bookTitle = document.createElement("div");
+    bookTitle.className = "title";
+    bookTitle.innerHTML = book.title;
 
-        let bookAuthor = document.createElement("div");
-        bookAuthor.className = "author";
-        bookAuthor.innerHTML = `by ${books[x].author}`;
+    let bookAuthor = document.createElement("div");
+    bookAuthor.className = "author";
+    bookAuthor.innerHTML = `by ${book.author}`;
 
-        let bookPages = document.createElement("div");
-        bookPages.className = "pages";
-        bookPages.innerHTML = `${books[x].pages} pages`;
+    let bookPages = document.createElement("div");
+    bookPages.className = "pages";
+    bookPages.innerHTML = `${book.pages} pages`;
 
-        let bookRead = document.createElement("div");
-        if (books[x].haveRead){
-            bookRead.className = "have-read";
-            bookRead.innerHTML = "Read";
-        }
-        else {
-            bookRead.className = "have-not-read";
-            bookRead.innerHTML = "Not Read";
-        }
-        bookRead.addEventListener("click", function() {bookSwitch(books[x], bookRead)});
-
-        newBook.appendChild(bookTitle);
-        newBook.appendChild(bookAuthor);
-        newBook.appendChild(bookPages);
-        newBook.appendChild(bookRead);
-
-        LIBRARY.appendChild(newBook);
-
+    let bookRead = document.createElement("div");
+    if (book.haveRead){
+        bookRead.className = "have-read";
+        bookRead.innerHTML = "Read";
     }
+    else {
+        bookRead.className = "have-not-read";
+        bookRead.innerHTML = "Not Read";
+    }
+    bookRead.addEventListener("click", function() {bookSwitch(book, bookRead)});
+
+    newBook.appendChild(bookTitle);
+    newBook.appendChild(bookAuthor);
+    newBook.appendChild(bookPages);
+    newBook.appendChild(bookRead);
+
+    LIBRARY.appendChild(newBook);
+
 }
 
 function bookSwitch(book, element){
@@ -91,6 +88,22 @@ function bookSwitch(book, element){
     else {
         element.className = "have-not-read";
         element.innerHTML = "Not Read";
+    }
+}
+
+function bookForm(){
+    let title = TITLE_INPUT.value;
+    let author = AUTHOR_INPUT.value;
+    let pages = PAGES_INPUT.value;
+    if (title == "" || author == "" || pages == ""){
+        alert("Please fill in all fields");
+    }
+    else {
+        render(addBook(title, author, pages, READ_INPUT.checked)); 
+        TITLE_INPUT.value = "";
+        AUTHOR_INPUT.value = "";
+        PAGES_INPUT.value = "";
+        READ_INPUT.checked = false;
     }
 }
 

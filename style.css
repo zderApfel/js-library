@@ -1,4 +1,4 @@
-div{
+div, input{
     font-family: 'Dosis', sans-serif;
 }
 
@@ -58,33 +58,31 @@ div{
     text-align: center;
 }
 
-.new-input{
+.text-input{
     width: 100%;
     margin-top: 10px;
     display: block;
 }
 
-.have-not-read{
+.have-not-read, .have-read{
     user-select: none;
     border-style: outset;
-    border-color: darkred;
-    background-color: darkred;
-    color: white;
-    text-align: center;
-    width: 50%;
-    margin: auto;
-}
 
-.have-read{
-    user-select: none;
-    border-style: outset;
-    border-color: darkgreen;
-    background-color: darkgreen;
     color: white;
     text-align: center;
     width: 50%;
     margin: auto;
     margin-top: 10%;
+}
+
+.have-not-read{
+    border-color: darkred;
+    background-color: darkred;
+}
+
+.have-read{
+    border-color: darkgreen;
+    background-color: darkgreen;
 }
 
 .have-not-read:active, .have-read:active, #submit:active{
