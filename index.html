@@ -6,18 +6,18 @@
     </head>
     <body>
         <div id="library-container">
-            <div id="create-new">
+            <form id="create-new">
                 <h1 class="title">Create New Book</h1>
-                <div id="input-fields">
-                    <input type="text" id="input-title" class="text-input" placeholder="Title">
-                    <input type="text" id="input-author" class="text-input" placeholder="Author">
-                    <input type="text" id="input-pages" class="text-input" placeholder="Number of Pages">
+                <p id="input-fields">
+                    <input type="text" id="input-title" class="text-input" placeholder="Title" required>
+                    <input type="text" id="input-author" class="text-input" placeholder="Author" required>
+                    <input type="text" id="input-pages" class="text-input" placeholder="Number of Pages" required>
                     <label for="have-you-read">Have you read it?
                         <input name="have-you-read" id="have-you-read" type="checkbox">
                     </label>
                     <div id="submit">Submit</div>
-                </div>
-            </div>
+                </p>
+            </form>
         </div>
     </body>
     <script src="script.js"></script>

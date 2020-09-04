@@ -92,14 +92,15 @@ function bookSwitch(book, element){
 }
 
 function bookForm(){
-    let title = TITLE_INPUT.value;
-    let author = AUTHOR_INPUT.value;
-    let pages = PAGES_INPUT.value;
-    if (title == "" || author == "" || pages == ""){
+    let title = TITLE_INPUT;
+    let author = AUTHOR_INPUT;
+    let pages = PAGES_INPUT;
+    
+    if(title.validity.valueMissing || author.validity.valueMissing || pages.validity.valueMissing){
         alert("Please fill in all fields");
     }
-    else {
-        render(addBook(title, author, pages, READ_INPUT.checked)); 
+    else{
+        render(addBook(title.value, author.value, pages.value, READ_INPUT.checked)); 
         TITLE_INPUT.value = "";
         AUTHOR_INPUT.value = "";
         PAGES_INPUT.value = "";

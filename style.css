@@ -64,6 +64,10 @@ div, input{
     display: block;
 }
 
+.text-input:invalid{
+    border-color: red;
+}
+
 .have-not-read, .have-read{
     user-select: none;
     border-style: outset;
